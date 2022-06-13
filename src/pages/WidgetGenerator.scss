@@ -1,0 +1,15 @@
+.wg{
+    &__content{
+        display: flex;
+
+        &__left{
+            flex: 1 0 70%;
+        }
+
+        &__right{
+            flex: 1 0 30%;
+        }
+        
+    }
+
+}
