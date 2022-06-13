@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-prettier"
+    ],
+    "rules": {
+        "font-family-no-duplicate-names": true,
+        "color-no-invalid-hex": true,
+        "font-weight-notation": "numeric"
+    }
+}
