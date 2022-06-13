@@ -22,6 +22,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'default-param-last': 'off',
+    '@typescript-eslint/default-param-last': 'off',
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
