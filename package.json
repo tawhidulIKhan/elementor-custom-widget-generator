@@ -29,10 +29,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "fix-styles": "npx stylelint 'src/**/*.scss' --fix"
+    "fix-styles": "npx stylelint 'src/**/*.scss'",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -64,6 +65,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "prettier-stylelint": "^0.4.2",
     "sass": "^1.52.3",
