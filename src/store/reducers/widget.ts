@@ -1,9 +1,8 @@
 // widget reducers
 
-const INITIAL_STORE: any = {
-  title: 'Test title',
-};
-const widgetReducer = (state = INITIAL_STORE, { type, payload }: any) => {
+import widgetData from '../../data/widgetData';
+
+const widgetReducer = (state = widgetData, { type, payload }: any) => {
   switch (type) {
     case 'add_title':
       return {
