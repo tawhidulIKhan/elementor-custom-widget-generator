@@ -1,10 +1,10 @@
 import { Button } from 'antd';
 import React from 'react';
 import { connect } from 'react-redux';
-import sectionData from '../../data/sectionData';
 import { Section } from '../../interfaces/widget';
-import { RootState } from '../../store';
 import { addSection } from '../../store/actions/widgetAction';
+import { randomId } from '../../utils/helpers';
+import WidgetSectionList from '../widgetSectionList/WidgetSectionList';
 import './WidgetSectionForm.scss';
 
 interface Props {
@@ -14,25 +14,26 @@ interface Props {
 function WidgetSectionForm(props: Props) {
   const { insertSection } = props;
   const addNewSection = () => {
-    // eslint-disable-next-line no-console
-    console.log(444);
-    insertSection(sectionData);
+    const newSection = {
+      id: randomId(),
+      label: 'Test',
+      tab: '',
+      controls: [],
+    };
+    insertSection(newSection);
   };
   return (
     <div className="widget__sform">
       <Button onClick={() => addNewSection()} type="primary">
         Add Section
       </Button>
+      <WidgetSectionList />
     </div>
   );
 }
-
-const mapStateToProps = (state: RootState) => ({
-  sections: state.widget.sections,
-});
 
 const mapDispatchToProps = {
   insertSection: addSection,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(WidgetSectionForm);
+export default connect(null, mapDispatchToProps)(WidgetSectionForm);
