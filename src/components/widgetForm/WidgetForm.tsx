@@ -1,12 +1,31 @@
 import { Input, Select } from 'antd';
+import { ChangeEvent } from 'react';
+import { connect } from 'react-redux';
+import { RootState } from '../../store';
+import { setWidgetTitle } from '../../store/actions/widgetAction';
 import './WidgetForm.scss';
 
-export default function WidgetForm() {
+interface Props {
+  widget: any;
+  setTitle: (title: string) => void;
+}
+
+function WidgetForm(props: Props) {
+  const { setTitle } = props;
+  const { widget } = props;
+  const onTitleChange = (ev: ChangeEvent<{ value: string }>) => {
+    setTitle(ev.target.value);
+  };
   return (
     <div className="widget__form">
       <div className="widget__form__row">
         <div className="widget__form__column">
-          <Input placeholder="Enter widget name" />
+          {widget.title}
+          <Input
+            defaultValue={widget.title}
+            placeholder="Enter widget name"
+            onChange={onTitleChange}
+          />
           <p>ex: Test_Widget</p>
         </div>
         <div className="widget__form__column">
@@ -44,3 +63,13 @@ export default function WidgetForm() {
     </div>
   );
 }
+
+const mapStateToProps = (state: RootState) => ({
+  widget: state.widget,
+});
+
+const mapDispatchToProps = {
+  setTitle: setWidgetTitle,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WidgetForm);
