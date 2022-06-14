@@ -1,5 +1,8 @@
+import { randomId } from '../utils/helpers';
+
 export default {
-  id: '',
+  id: randomId(),
   label: '',
   tab: '',
+  controls: [],
 };
