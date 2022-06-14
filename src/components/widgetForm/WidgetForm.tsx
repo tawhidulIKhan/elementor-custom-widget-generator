@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 import { RootState } from '../../store';
 import { setWidgetTitle } from '../../store/actions/widgetAction';
+import WidgetSectionForm from '../widgetSectionForm/WidgetSectionForm';
 import './WidgetForm.scss';
 
 interface Props {
@@ -20,7 +21,6 @@ function WidgetForm(props: Props) {
     <div className="widget__form">
       <div className="widget__form__row">
         <div className="widget__form__column">
-          {widget.title}
           <Input
             defaultValue={widget.title}
             placeholder="Enter widget name"
@@ -60,6 +60,7 @@ function WidgetForm(props: Props) {
           <Input placeholder="Basic usage" />
         </div>
       </div>
+      <WidgetSectionForm />
     </div>
   );
 }
