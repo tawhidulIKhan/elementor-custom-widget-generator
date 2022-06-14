@@ -4,5 +4,5 @@ export default {
   icon: '',
   categories: [],
   keywords: [],
-  sections: [],
+  sections: <any>[],
 };
