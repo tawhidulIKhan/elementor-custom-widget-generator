@@ -17,7 +17,7 @@ function WidgetSectionForm(props: Props) {
     const newSection = {
       id: randomId(),
       label: 'Test',
-      tab: '',
+      tab: '\\Elementor\\Controls_Manager::TAB_CONTENT',
       controls: [],
     };
     insertSection(newSection);
