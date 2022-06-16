@@ -1,0 +1,15 @@
+.section__item{
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  &__label{
+    margin:0;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  &__controls{
+    margin-left: 50px;
+    padding-left: 20px;
+    margin-top: 30px;
+    border-left: 2px solid #ddd;
+  }
+}

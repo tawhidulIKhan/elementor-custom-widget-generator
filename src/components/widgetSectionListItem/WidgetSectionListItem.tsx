@@ -2,6 +2,7 @@ import { Input } from 'antd';
 import React from 'react';
 import { SectionInterface } from '../../interfaces/widget';
 import WidgetControlForm from '../widgetControlForm/WidgetControlForm';
+import WidgetControlList from '../widgetControlList/WidgetControlList';
 import './WidgetSectionListItem.scss';
 
 interface Props {
@@ -22,6 +23,7 @@ function WidgetSectionListItem(props: Props) {
         </div>
       </div>
       <div className="section__item__controls">
+        <WidgetControlList controls={section.controls} />
         <WidgetControlForm sectionId={section.id} />
       </div>
     </div>
