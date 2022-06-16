@@ -1,6 +1,7 @@
 import { Input } from 'antd';
 import React from 'react';
 import { SectionInterface } from '../../interfaces/widget';
+import WidgetControlForm from '../widgetControlForm/WidgetControlForm';
 import './WidgetSectionListItem.scss';
 
 interface Props {
@@ -19,6 +20,9 @@ function WidgetSectionListItem(props: Props) {
           <p className="section__item__label">Section tab</p>
           <Input defaultValue={section.tab} />
         </div>
+      </div>
+      <div className="section__item__controls">
+        <WidgetControlForm sectionId={section.id} />
       </div>
     </div>
   );

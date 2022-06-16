@@ -11,3 +11,9 @@ export interface SectionInterface {
   tab: string;
   controls: any;
 }
+
+export interface ControlInterface {
+  id: string;
+  label: string;
+  type: string;
+}
