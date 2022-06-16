@@ -1,4 +1,5 @@
 import React from 'react';
+import WidgetCode from '../components/widgetCode/WidgetCode';
 import WidgetForm from '../components/widgetForm/WidgetForm';
 import './WidgetGenerator.scss';
 
@@ -9,7 +10,9 @@ function WidgetGenerator() {
         <div className="wg__content__left">
           <WidgetForm />
         </div>
-        <div className="wg__content__right" />
+        <div className="wg__content__right">
+          <WidgetCode />
+        </div>
       </div>
     </div>
   );

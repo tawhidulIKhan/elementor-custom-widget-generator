@@ -15,7 +15,7 @@ const widgetReducer = (state = widgetData, { type, payload }: any) => {
     case SET_WIDGET_TITLE:
       return {
         ...state,
-        title: payload,
+        [payload.key]: payload.value,
       };
     case SET_WIDGET_SECTION:
       return {
