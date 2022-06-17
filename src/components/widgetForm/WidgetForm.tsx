@@ -2,8 +2,11 @@
 import { Input, Select } from 'antd';
 import { ChangeEvent } from 'react';
 import { connect } from 'react-redux';
+import { widgetCategories } from '../../data/widgetData';
+import { WidgetCategoriesInterface } from '../../interfaces/widget';
 import { RootState } from '../../store';
 import { setWidgetTitle } from '../../store/actions/widgetAction';
+import FormLabel from '../label/FormLabel';
 import WidgetSectionForm from '../widgetSectionForm/WidgetSectionForm';
 import './WidgetForm.scss';
 
@@ -32,47 +35,62 @@ function WidgetForm(props: Props) {
     <div className="widget__form">
       <div className="widget__form__row">
         <div className="widget__form__column">
+          <FormLabel
+            label="Widget Name"
+            tooltip="The get_name() method returns the widget name as it will be used in the code."
+          />
           <Input
             defaultValue={widget.title}
             placeholder="Enter widget name"
             onChange={onTitleChange}
           />
-          <p>ex: Test_Widget</p>
+          <span className="example">i.e. oembed</span>
         </div>
         <div className="widget__form__column">
+          <FormLabel
+            label="Widget Title"
+            tooltip="The get_title() method returns the widget label as it will be displayed to the user."
+          />
           <Input placeholder="Enter widget title" />
-          <p>ex: Test_Widget</p>
+          <span className="example">i.e. oEmbed</span>
         </div>
         <div className="widget__form__column">
+          <FormLabel
+            label="Widget Icon"
+            tooltip="he get_icon() method is an optional, but recommended, method. It lets you set the widget icon. You can use any Elementor icons (opens new window)or FontAwesome icons (opens new window), to simply return the CSS class name."
+          />
           <Select defaultValue="1" style={{ width: 200 }}>
             <Select.Option selected disabled value="1">
               Select widget icon
             </Select.Option>
-            <Select.Option value="general">General</Select.Option>
-            <Select.Option value="social">Social</Select.Option>
-            <Select.Option value="media">Media</Select.Option>
+            {widgetCategories.map((category: WidgetCategoriesInterface) => (
+              <Select.Option value={category.id}>
+                {category.label}
+              </Select.Option>
+            ))}
           </Select>
+          <span className="example">i.e eicon-code</span>
         </div>
         <div className="widget__form__column">
-          <Input placeholder="Enter keywords" />
-          <p>ex: keywords</p>
-        </div>
-        <div className="widget__form__column">
+          <FormLabel
+            label="Widget Categories"
+            tooltip="he get_icon() method is an optional, but recommended, method. It lets you set the widget icon. You can use any Elementor icons (opens new window)or FontAwesome icons (opens new window), to simply return the CSS class name."
+          />
           <Select
             onChange={onCategoryChange}
             defaultValue="1"
             style={{ width: 200 }}
           >
             <Select.Option selected disabled value="1">
-              Select or create widget categories
+              Select widget categories
             </Select.Option>
-            <Select.Option value="general">General</Select.Option>
-            <Select.Option value="social">Social</Select.Option>
-            <Select.Option value="media">Media</Select.Option>
+            {widgetCategories.map((category: WidgetCategoriesInterface) => (
+              <Select.Option value={category.id}>
+                {category.label}
+              </Select.Option>
+            ))}
           </Select>
-        </div>
-        <div className="widget__form__column">
-          <Input placeholder="Basic usage" />
+          <span className="example">i.e. general</span>
         </div>
       </div>
       <WidgetSectionForm />

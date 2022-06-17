@@ -19,3 +19,8 @@ export interface SectionInterface {
   tab: ControlTabs;
   controls: ControlInterface[];
 }
+
+export interface WidgetCategoriesInterface {
+  id: string;
+  label: string;
+}
