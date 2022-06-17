@@ -1,0 +1,11 @@
+.label{
+  &__title{
+    margin:0;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  &__tooltip{
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

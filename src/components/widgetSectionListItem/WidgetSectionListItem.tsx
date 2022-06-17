@@ -1,11 +1,10 @@
-import { QuestionCircleOutlined } from '@ant-design/icons';
-import { Input, Select, Tooltip } from 'antd';
-import React from 'react';
+import { Input, Select } from 'antd';
 import {
   controlSectionTabs,
   controlSectionTabsInterface,
 } from '../../data/controlData';
 import { SectionInterface } from '../../interfaces/widget';
+import FormLabel from '../label/FormLabel';
 import WidgetControlForm from '../widgetControlForm/WidgetControlForm';
 import WidgetControlList from '../widgetControlList/WidgetControlList';
 import './WidgetSectionListItem.scss';
@@ -19,27 +18,17 @@ function WidgetSectionListItem(props: Props) {
     <div className="section__item">
       <div className="widget__form__row">
         <div className="widget__form__column">
-          <p className="section__item__label">
-            Section label{' '}
-            <Tooltip
-              placement="topLeft"
-              title="Label displayed to the user in the panel."
-            >
-              <QuestionCircleOutlined />
-            </Tooltip>
-          </p>
+          <FormLabel
+            label="Section label"
+            tooltip="Label displayed to the user in the panel."
+          />
           <Input defaultValue={section.label} />
         </div>
         <div className="widget__form__column">
-          <p className="section__item__label">
-            Section tab
-            <Tooltip
-              placement="topLeft"
-              title="Tab where the section is located. Default is content"
-            >
-              <QuestionCircleOutlined />
-            </Tooltip>
-          </p>
+          <FormLabel
+            label="Section tab"
+            tooltip="Tab where the section is located. Default is content"
+          />
           <Select defaultValue={section.tab} style={{ width: '300px' }}>
             {controlSectionTabs.map((tab: controlSectionTabsInterface) => (
               <Select.Option value={tab.id}>{tab.label}</Select.Option>

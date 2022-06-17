@@ -19,6 +19,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-shadow': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/no-shadow': ['off'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
