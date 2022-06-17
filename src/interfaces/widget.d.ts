@@ -1,14 +1,9 @@
+import { ControlTabs } from '../enums/controls';
+
 export interface Section {
   id: string;
   label: string;
-  tab: string;
-  controls: any;
-}
-
-export interface SectionInterface {
-  id: string;
-  label: string;
-  tab: string;
+  tab: ControlTabs;
   controls: any;
 }
 
@@ -16,4 +11,11 @@ export interface ControlInterface {
   id: string;
   label: string;
   type: string;
+}
+
+export interface SectionInterface {
+  id: string;
+  label: string;
+  tab: string;
+  controls: ControlInterface[];
 }
