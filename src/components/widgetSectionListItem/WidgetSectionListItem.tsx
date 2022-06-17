@@ -1,5 +1,9 @@
-import { Input } from 'antd';
+import { Input, Select } from 'antd';
 import React from 'react';
+import {
+  controlSectionTabs,
+  controlSectionTabsInterface,
+} from '../../data/controlData';
 import { SectionInterface } from '../../interfaces/widget';
 import WidgetControlForm from '../widgetControlForm/WidgetControlForm';
 import WidgetControlList from '../widgetControlList/WidgetControlList';
@@ -19,7 +23,11 @@ function WidgetSectionListItem(props: Props) {
         </div>
         <div className="widget__form__column">
           <p className="section__item__label">Section tab</p>
-          <Input defaultValue={section.tab} />
+          <Select defaultValue={section.tab} style={{ width: '300px' }}>
+            {controlSectionTabs.map((tab: controlSectionTabsInterface) => (
+              <Select.Option value={tab.id}>{tab.label}</Select.Option>
+            ))}
+          </Select>
         </div>
       </div>
       <div className="section__item__controls">

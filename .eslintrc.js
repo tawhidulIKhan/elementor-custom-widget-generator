@@ -18,6 +18,8 @@ module.exports = {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['off'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     'no-unused-vars': 'off',
