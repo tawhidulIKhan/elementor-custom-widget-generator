@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import React from 'react';
 import { connect } from 'react-redux';
+import { ControlTabs } from '../../enums/controls';
 import { Section } from '../../interfaces/widget';
 import { addSection } from '../../store/actions/widgetAction';
 import { randomId } from '../../utils/helpers';
@@ -17,7 +18,7 @@ function WidgetSectionForm(props: Props) {
     const newSection = {
       id: randomId(),
       label: 'Test',
-      tab: '\\Elementor\\Controls_Manager::TAB_CONTENT',
+      tab: ControlTabs.CONTENT,
       controls: [],
     };
     insertSection(newSection);
