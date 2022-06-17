@@ -16,6 +16,6 @@ export interface ControlInterface {
 export interface SectionInterface {
   id: string;
   label: string;
-  tab: string;
+  tab: ControlTabs;
   controls: ControlInterface[];
 }
