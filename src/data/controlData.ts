@@ -1,4 +1,4 @@
-import { ControlTabs } from '../enums/controls';
+import { ControlTabs, ControlTypes } from '../enums/controls';
 
 export default {
   id: '',
@@ -10,6 +10,11 @@ export interface controlSectionTabsInterface {
   id: ControlTabs;
   label: string;
 }
+export interface controlTypeInterface {
+  id: ControlTypes;
+  label: string;
+}
+
 export const controlSectionTabs = [
   {
     id: ControlTabs.CONTENT,
@@ -26,5 +31,16 @@ export const controlSectionTabs = [
   {
     id: ControlTabs.SETTINGS,
     label: 'Settings',
+  },
+];
+
+export const controlTypes = [
+  {
+    id: ControlTypes.TEXT,
+    label: 'Text',
+  },
+  {
+    id: ControlTypes.TEXTAREA,
+    label: 'Textarea',
   },
 ];
