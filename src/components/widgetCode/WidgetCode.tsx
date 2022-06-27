@@ -2,23 +2,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { getWidgetCode } from '../../services/elementor/widgetParser';
 import { RootState } from '../../store';
-import widgetTemplate from '../../templates/widgetTemplate';
-import { getCode } from '../../services/elementor/widgetParser';
 
 function WidgetCode(props: any) {
   const { widget } = props;
   const [codeSn, setCodeSn] = useState('');
 
   useEffect(() => {
-    console.log(widget);
-    setCodeSn(getCode(widgetTemplate, widget));
+    setCodeSn(getWidgetCode(widget));
   }, [widget]);
-
-  console.log(widget);
 
   return (
     <div>
