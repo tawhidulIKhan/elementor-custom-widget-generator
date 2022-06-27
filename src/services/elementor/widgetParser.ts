@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import {
+import widgetTemplate, {
   SECTION_TEMPLATE,
   TEXT_TEMPLATE,
 } from '../../templates/widgetTemplate';
@@ -25,13 +25,8 @@ const parseItem = (item: any, replaceAbleActions: any) => {
   return tempItem;
 };
 
-const getControls = (controls: any) => {
-  let controlOutput = '';
-  controls.forEach((control: any) => {
-    controlOutput += `${getControl(control)}`;
-  });
-  return controlOutput;
-};
+const getControls = (controls: any) =>
+  controls.reduce((prev: any, itr: any) => `${getControl(itr)}`, '');
 
 export const getSections = (sectionObj: any, sectionTemplate: string) => {
   const replaceAbleActions: any = [
@@ -52,17 +47,15 @@ export const getSections = (sectionObj: any, sectionTemplate: string) => {
   return parseItem(sectionTemplate, replaceAbleActions);
 };
 
-export const getWidgetSections = (sections: any) => {
-  let output = '';
-  sections.forEach((itr: any) => {
-    output += `${getSections(itr, SECTION_TEMPLATE)}`;
-  });
-  return output;
-};
+export const getWidgetSections = (sections: any) =>
+  sections.reduce(
+    (prev: any, itr: any) => `${getSections(itr, SECTION_TEMPLATE)}`,
+    ''
+  );
 
 export const getCategories = (categories: any) => categories.join(',');
 
-export const getCode = (widgetTemplate: any, widget: any) => {
+export const getWidgetCode = (widget: any) => {
   const replaceAbleActions: any = [
     {
       placeholder: ':widgetName',
