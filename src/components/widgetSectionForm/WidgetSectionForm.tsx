@@ -15,7 +15,7 @@ interface Props {
 function WidgetSectionForm(props: Props) {
   const { insertSection } = props;
   const addNewSection = () => {
-    const newSection = {
+    const newSection: any = {
       id: randomId(),
       label: 'Test',
       tab: ControlTabs.CONTENT,
