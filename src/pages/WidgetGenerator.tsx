@@ -1,4 +1,3 @@
-import React from 'react';
 import WidgetCode from '../components/widgetCode/WidgetCode';
 import WidgetForm from '../components/widgetForm/WidgetForm';
 import './WidgetGenerator.scss';

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { connect } from 'react-redux';
 import { RootState } from '../../store';
+import './WidgetCode.scss';
 
 function WidgetCode(props: any) {
   const { widget } = props;
@@ -193,7 +194,7 @@ class ${widget.title}_Widget extends \\Elementor\\Widget_Base {
   console.log(widget);
 
   return (
-    <div>
+    <div className="codeviewer">
       <Highlight {...defaultProps} code={codeSn} language="jsx">
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
